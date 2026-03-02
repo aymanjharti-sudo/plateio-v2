@@ -359,7 +359,7 @@ function extractMinutes(step){
 
 // ─── API Anthropic ─────────────────────────────────────────────────────────────
 async function askClaude(userPrompt, maxTokens=3000) {
-  const response = await fetch("/api/chat", {
+  const response = await fetch("/.netlify/functions/chat", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ prompt: userPrompt, max_tokens: maxTokens }),
